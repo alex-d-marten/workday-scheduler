@@ -22,18 +22,20 @@ var buildTimeBlocks = function() {
 
     for (var i=0; i < workTimes.length; i++) {
         const contentSection = $('<section>');
-        contentSection.addClass('row');
+        contentSection.addClass('row h-auto content-section');
 
         const hourDiv = $('<div>')
             .addClass('hour col d-flex flex-column justify-content-center text-center')
             .text(workTimes[i]);
         contentSection.append(hourDiv);
 
-        const workdayContentDiv = $('<div>').addClass('col-10 d-flex flex-column justify-content-center content');
+        const workdayContentDiv = $('<div>')
+            .addClass('col-10 d-flex flex-column pb-1 pt-1 card content')
+            .attr('contenteditable', 'true')
 
-        // const contentUl = $('<ul>')
-        //     .addClass('flex-column')
-        //     .text("test");
+        // const contentUl = $('<p>')
+        //     .addClass('flex-column test');
+        //     // .text("test");
         // workdayContentDiv.append(contentUl);
 
         contentSection.append(workdayContentDiv);
@@ -60,10 +62,7 @@ var buildTimeBlocks = function() {
     } 
 };
 
-// edit schedule
-$('.content').on('click', 'div', function() {
-    console.log(this);
-})
+
 
 buildTimeBlocks();
 updateCurrentDay();
