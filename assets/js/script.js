@@ -16,7 +16,6 @@ var retrieveStoredContent = function() {
     var storedWorkdayContent = JSON.parse(localStorage.getItem('workdayTasks'));
 
     if(storedWorkdayContent) {
-        console.log("Local storage has content")
         workdayContent = storedWorkdayContent;
     }
 }
@@ -114,7 +113,6 @@ var updateLocalStorage = function(textContent, id) {
             id: id,
             workdayTask: textContent,
         });
-        console.log(workdayContent)
     }
     localStorage.setItem('workdayTasks', JSON.stringify(workdayContent));
     
